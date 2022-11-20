@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        *{
+            user-select: none;
+        }
+        #list::before{
+            content: '▶';
+        }
+        #list ul{
+            display: none;
+            max-height: 0;
+            list-style: none;
+            padding-left: 50px;
+        }
+        #list.open::before{
+            content: '▼ '
+        }
+        #list{
+            cursor: pointer;
+        }
+        #list.open ul{
+            display: block;
+            transition: max-height ease-out 3s;
+        }
+    </style>
+</head>
+<body>
+<div id="list">
+    <span class="title">Солодощі (натисни мене)!</span>
+    <ul>
+        <li> Тістечко </li>
+        <li> Пончик </li>
+        <li> Мед </li>
+    </ul>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
